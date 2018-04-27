@@ -1,12 +1,12 @@
-package dynamic;
+package dynamic.cglib;
 
 /**
  * @author esther
- * @create 2017-11-09 13:58
+ * 2017-12-20 15:56
  * $DESCRIPTION}
  */
 
-public class DaoImpl implements IDao{
+public class DaoImpl2 {
 
     public void doSave() {
         System.out.println("执行保存方法【doSave】");

@@ -1,6 +1,8 @@
 package dynamic;
 
 
+import org.springframework.aop.support.AopUtils;
+
 /**
  * @author esther
  * @create 2017-11-09 13:59
@@ -11,11 +13,14 @@ package dynamic;
 public class DynamicProxyTest {
     public static void main(String[] args) {
         //获得代理的实例
-        IDao dao = (IDao) new DaoProxy().bind(new DaoImpl());
+        IDao dao =new DaoProxy2<IDao>().bind(new DaoImpl()); // (IDao) new DaoProxy().bind(new DaoImpl());
         //调用被代理类中的保存方法
         dao.doSave();
         System.out.println("-----------------------------");
         dao.getById("1");
+
+        System.out.println("isJdkDynamicProxy:" + AopUtils.isJdkDynamicProxy(dao));
+        System.out.println("isCglibProxy:" + AopUtils.isCglibProxy(dao));
 
         /*
         进行日志记录，方法为：doSave

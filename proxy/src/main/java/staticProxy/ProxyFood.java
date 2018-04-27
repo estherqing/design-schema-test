@@ -15,7 +15,6 @@ class ProxyFood implements Food {
         return this;
     }
 
-    @Override
     public void eat() {
         this.prepare();
         this.food.eat();

@@ -7,11 +7,13 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="pipeline" />
+        <module name="proxy" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="design-schema-test" target="1.5" />
       <module name="pipeline" target="1.5" />
+      <module name="proxy" target="1.6" />
     </bytecodeTargetLevel>
   </component>
 </project>

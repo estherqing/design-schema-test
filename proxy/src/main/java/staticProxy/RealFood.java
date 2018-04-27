@@ -8,7 +8,7 @@ package staticProxy;
 
 //核心业务操作类
 class RealFood implements Food{
-    @Override
+
     public void eat() {
         System.out.println("马小超在吃饭！");
     }

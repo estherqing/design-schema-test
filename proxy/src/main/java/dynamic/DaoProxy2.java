@@ -13,17 +13,17 @@ import java.lang.reflect.Proxy;
  * 3,args是通过被代理实例某一个方法的入参，在方法反射调用时使用。
  */
 
-public class DaoProxy implements InvocationHandler {
+public class DaoProxy2<T> implements InvocationHandler {
 
     //被代理类的对象
-    public Object target;
+    public T target;
 
     //绑定被代理对象
-    public Object bind(Object target) {
+    public T bind(T target) {
         this.target = target;
         //返回实现了被代理类所实现的所有接口的Object对象，即动态代理，需要强制转型
         //创建代理对象，注意这里被代理的对象类必须实现至少一个接口
-        return Proxy.newProxyInstance(target.getClass().getClassLoader(), target.getClass().getInterfaces(), this);
+        return (T)Proxy.newProxyInstance(target.getClass().getClassLoader(), target.getClass().getInterfaces(), this);
     }
 
     private void log(String method) {
